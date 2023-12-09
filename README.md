@@ -19,10 +19,35 @@ Extract the contained folder to a location on your computer and run the executab
 
 **If you are running a compiled build you do NOT need to do this.**
 
-1) Install [Python 3.7+](https://www.python.org/)
-2) We recommend setting up a [python virtual environment](https://docs.python.org/3/tutorial/venv.html) so you don't run into issues with dependency conflicts.
-3) run `python -m pip install amulet-map-editor` to install the library and all its dependencies.
-4) run `python -m amulet_map_editor` to run the program
+### 1. Install Dependencies
+
+#### Fedora
+```bash
+sudo dnf install freeglut-devel git
+```
+
+#### Ubuntu
+```bash
+sudo apt-get install freeglut3-dev git
+```
+
+### 2. Clone Repository
+```bash
+git clone https://github.com/Amulet-Team/Amulet-Map-Editor.git
+cd Amulet-Map-Editor
+```
+
+### 3. Build Amulet Map Editor
+```bash
+python3 -m venv .venv && source .venv/bin/activate   # (Optional) Set up a virtual environment
+python3 -m pip install wxPython --no-cache-dir       # This step can take a long time
+python3 -m pip install -e .
+```
+
+### 4. Run Amulet Map Editor
+```bash
+python3 -m amulet_map_editor
+```
 
 ### Notes
 
